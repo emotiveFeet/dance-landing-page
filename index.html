@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Aarav Dance Co. | Choreographer & Dance Teacher</title>
-  <meta name="description" content="Dance choreography, classes, workshops and event performances by Aarav Dance Co.">
+  <title>Emotive Feet | Aishwarya Vardhan</title>
+  <meta name="description" content="Aishwarya Vardhan — dancer, choreographer and dance teacher in Bangalore. Kathak, contemporary, Bollywood, semi-classical, freestyle, hip-hop, Zumba and yoga.">
 
   <style>
     * {
@@ -20,8 +20,8 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #0b0b0d;
-      color: #ffffff;
+      background: #0b0a0d;
+      color: #fff;
       line-height: 1.6;
     }
 
@@ -30,7 +30,9 @@
       text-decoration: none;
     }
 
-    /* ---------- HERO ---------- */
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
       min-height: 100vh;
@@ -42,42 +44,48 @@
       background:
         linear-gradient(
           to top,
-          rgba(0,0,0,0.95) 5%,
-          rgba(0,0,0,0.25) 65%,
-          rgba(0,0,0,0.1)
+          rgba(5, 4, 7, 0.98) 5%,
+          rgba(5, 4, 7, 0.45) 55%,
+          rgba(5, 4, 7, 0.10)
         ),
-        url("https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&w=1600&q=85")
+        url("https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&w=1800&q=90")
         center / cover no-repeat;
     }
 
     .hero-content {
       width: 100%;
-      max-width: 1100px;
+      max-width: 1150px;
       margin: auto;
-      padding: 80px 24px 60px;
+      padding: 100px 24px 65px;
     }
 
-    .eyebrow {
-      color: #ff4d8d;
+    .brand {
       font-size: 14px;
       font-weight: bold;
-      letter-spacing: 3px;
+      letter-spacing: 4px;
       text-transform: uppercase;
-      margin-bottom: 14px;
+      color: #ff5c9a;
+      margin-bottom: 18px;
     }
 
     h1 {
-      font-size: clamp(52px, 12vw, 110px);
-      line-height: 0.9;
-      letter-spacing: -5px;
-      max-width: 850px;
+      font-size: clamp(55px, 12vw, 125px);
+      line-height: 0.88;
+      letter-spacing: -6px;
+      max-width: 1000px;
+    }
+
+    .hero-name {
+      margin-top: 25px;
+      font-size: 19px;
+      color: #eeeeee;
     }
 
     .hero-subtitle {
-      margin-top: 25px;
-      font-size: 18px;
-      max-width: 550px;
-      color: #dddddd;
+      margin-top: 10px;
+      font-size: 16px;
+      color: #bbbbbb;
+      max-width: 600px;
     }
 
     .buttons {
@@ -88,7 +96,7 @@
     }
 
     .button {
-      padding: 14px 22px;
+      padding: 14px 23px;
       border-radius: 50px;
       font-weight: bold;
       display: inline-block;
@@ -100,8 +108,8 @@
     }
 
     .primary {
-      background: #ff4d8d;
-      color: white;
+      background: #ff4f91;
+      color: #fff;
     }
 
     .secondary {
@@ -109,10 +117,12 @@
       background: rgba(255,255,255,0.08);
     }
 
-    /* ---------- SECTIONS ---------- */
+    /* =========================
+       GENERAL
+    ========================= */
 
     section {
-      padding: 90px 24px;
+      padding: 95px 24px;
     }
 
     .container {
@@ -121,48 +131,97 @@
     }
 
     .section-label {
-      color: #ff4d8d;
+      color: #ff5c9a;
       font-size: 13px;
       text-transform: uppercase;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
       font-weight: bold;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     h2 {
-      font-size: clamp(34px, 6vw, 60px);
+      font-size: clamp(38px, 6vw, 65px);
       line-height: 1;
-      letter-spacing: -2px;
-      margin-bottom: 40px;
+      letter-spacing: -3px;
+      margin-bottom: 35px;
     }
 
-    /* ---------- ABOUT ---------- */
+    /* =========================
+       INTRO
+    ========================= */
 
-    .about {
-      background: #111114;
+    .intro {
+      background: #101015;
     }
 
-    .about-grid {
+    .intro-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 60px;
+      gap: 65px;
       align-items: center;
     }
 
-    .about-text {
-      color: #bbbbbb;
+    .intro-text {
+      color: #bcbcc3;
       font-size: 18px;
     }
 
-    .about-image {
-      height: 500px;
-      border-radius: 20px;
+    .intro-image {
+      height: 520px;
+      border-radius: 24px;
+
       background:
-        url("https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=1000&q=85")
+        url("https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=1000&q=90")
         center / cover;
     }
 
-    /* ---------- SERVICES ---------- */
+    /* =========================
+       STYLES
+    ========================= */
+
+    .styles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .style {
+      padding: 28px 25px;
+      border: 1px solid #29282f;
+      border-radius: 18px;
+      background: #101015;
+      transition: 0.2s ease;
+    }
+
+    .style:hover {
+      border-color: #ff5c9a;
+      transform: translateY(-3px);
+    }
+
+    .style-number {
+      color: #ff5c9a;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .style h3 {
+      margin-top: 13px;
+      font-size: 22px;
+    }
+
+    .style p {
+      margin-top: 7px;
+      color: #888891;
+      font-size: 14px;
+    }
+
+    /* =========================
+       SERVICES
+    ========================= */
+
+    .services {
+      background: #101015;
+    }
 
     .services-grid {
       display: grid;
@@ -170,143 +229,125 @@
       gap: 16px;
     }
 
-    .card {
-      padding: 30px;
-      border: 1px solid #29292e;
-      border-radius: 18px;
-      background: #111114;
-      transition: 0.2s ease;
+    .service {
+      padding: 32px;
+      border-radius: 20px;
+      border: 1px solid #29282f;
     }
 
-    .card:hover {
-      border-color: #ff4d8d;
-      transform: translateY(-3px);
+    .service h3 {
+      font-size: 27px;
+      margin-bottom: 10px;
     }
 
-    .card-number {
-      color: #ff4d8d;
-      font-weight: bold;
-      font-size: 14px;
+    .service p {
+      color: #9999a2;
     }
 
-    .card h3 {
-      font-size: 25px;
-      margin: 15px 0 10px;
+    /* =========================
+       WHY
+    ========================= */
+
+    .why {
+      text-align: center;
     }
 
-    .card p {
-      color: #999999;
+    .why-text {
+      max-width: 720px;
+      margin: auto;
+      font-size: 22px;
+      color: #bcbcc3;
     }
 
-    /* ---------- EVENTS ---------- */
-
-    .events {
-      background: #111114;
-    }
-
-    .event {
-      border-top: 1px solid #333;
-      padding: 25px 0;
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .event:last-child {
-      border-bottom: 1px solid #333;
-    }
-
-    .event-date {
-      color: #ff4d8d;
-      font-weight: bold;
-      min-width: 100px;
-    }
-
-    .event h3 {
-      font-size: 21px;
-    }
-
-    .event p {
-      color: #888;
-    }
-
-    /* ---------- CTA ---------- */
+    /* =========================
+       CTA
+    ========================= */
 
     .cta {
       text-align: center;
-      padding: 110px 24px;
+      padding: 115px 24px;
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(255,79,145,0.16),
+          transparent 60%
+        );
     }
 
     .cta h2 {
-      max-width: 750px;
-      margin: 0 auto 20px;
+      max-width: 800px;
+      margin: auto;
     }
 
     .cta p {
-      color: #999;
-      max-width: 500px;
-      margin: auto;
+      max-width: 550px;
+      margin: 20px auto 0;
+      color: #9999a2;
+      font-size: 17px;
     }
 
     .cta .buttons {
       justify-content: center;
     }
 
-    /* ---------- FOOTER ---------- */
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
-      border-top: 1px solid #222;
-      padding: 30px 24px;
-      color: #777;
+      border-top: 1px solid #222126;
+      padding: 35px 24px;
       text-align: center;
+      color: #777;
       font-size: 14px;
     }
 
     .social {
-      margin-bottom: 12px;
+      margin-bottom: 13px;
     }
 
     .social a {
-      color: white;
-      margin: 0 8px;
+      margin: 0 9px;
+      color: #fff;
     }
 
-    /* ---------- MOBILE ---------- */
+    /* =========================
+       MOBILE
+    ========================= */
 
-    @media (max-width: 700px) {
+    @media (max-width: 750px) {
 
       .hero {
         min-height: 92vh;
       }
 
       .hero-content {
-        padding-bottom: 45px;
+        padding: 80px 20px 45px;
       }
 
       h1 {
-        letter-spacing: -3px;
+        letter-spacing: -4px;
       }
 
       section {
         padding: 70px 20px;
       }
 
-      .about-grid {
+      .intro-grid {
         grid-template-columns: 1fr;
         gap: 35px;
       }
 
-      .about-image {
-        height: 380px;
+      .intro-image {
+        height: 390px;
+      }
+
+      .styles-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .services-grid {
         grid-template-columns: 1fr;
-      }
-
-      .event {
-        flex-direction: column;
-        gap: 5px;
       }
 
       .button {
@@ -314,46 +355,60 @@
         text-align: center;
       }
     }
+
+    @media (max-width: 450px) {
+
+      .styles-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
   </style>
 </head>
 
+
 <body>
 
-  <!-- HERO -->
+
+  <!-- =========================
+       HERO
+  ========================= -->
 
   <header class="hero">
 
     <div class="hero-content">
 
-      <div class="eyebrow">
-        Choreographer · Teacher · Performer
+      <div class="brand">
+        Emotive Feet
       </div>
 
       <h1>
         MOVE.<br>
-        CREATE.<br>
-        PERFORM.
+        FEEL.<br>
+        EXPRESS.
       </h1>
 
+      <div class="hero-name">
+        Aishwarya Vardhan · Dancer · Choreographer · Teacher
+      </div>
+
       <p class="hero-subtitle">
-        Dance classes, choreography, workshops and performances
-        for people who want to move with confidence.
+        Dance classes, choreography, workshops and movement experiences
+        in Bangalore.
       </p>
 
       <div class="buttons">
 
-        <!-- Replace the WhatsApp number -->
         <a
           class="button primary"
-          href="https://wa.me/919876543210?text=Hi%20Aarav!%20I%20found%20you%20on%20Instagram%20and%20I'd%20like%20to%20know%20more%20about%20your%20dance%20classes."
+          href="https://wa.me/918987596997?text=Hi%20Aishwarya!%20I%20found%20you%20through%20Instagram%20and%20I'd%20like%20to%20know%20more%20about%20your%20dance%20classes."
           target="_blank">
-          WhatsApp Me
+          💬 WhatsApp Me
         </a>
 
-        <!-- Replace Instagram username -->
         <a
           class="button secondary"
-          href="https://instagram.com/aaravdanceco"
+          href="https://instagram.com/emotive_feet"
           target="_blank">
           Instagram →
         </a>
@@ -365,42 +420,51 @@
   </header>
 
 
-  <!-- ABOUT -->
+  <!-- =========================
+       ABOUT
+  ========================= -->
 
-  <section class="about">
+  <section class="intro">
 
     <div class="container">
 
-      <div class="about-grid">
+      <div class="intro-grid">
 
         <div>
 
           <div class="section-label">
-            About
+            Meet Aishwarya
           </div>
 
           <h2>
-            Dance is more than steps.
+            Dance with emotion.
           </h2>
 
-          <p class="about-text">
-            I'm Aarav, a choreographer and dance educator based in
-            Bengaluru. I teach commercial choreography, freestyle
-            and performance-focused movement while helping dancers
-            build confidence, musicality and their own style.
+          <p class="intro-text">
+            I'm Aishwarya Vardhan, a dancer, choreographer and
+            dance teacher based in Bangalore.
           </p>
 
           <br>
 
-          <p class="about-text">
-            From beginner-friendly classes to stage performances
-            and workshops, my goal is simple — make people move,
-            create and enjoy the process.
+          <p class="intro-text">
+            With five years of Kathak training and a love for
+            contemporary, semi-classical, Bollywood, freestyle
+            and hip-hop, I explore movement across different
+            styles while keeping expression at the heart of dance.
+          </p>
+
+          <br>
+
+          <p class="intro-text">
+            Through Emotive Feet, I create spaces where people
+            can learn, move, perform and most importantly —
+            enjoy dancing.
           </p>
 
         </div>
 
-        <div class="about-image"></div>
+        <div class="intro-image"></div>
 
       </div>
 
@@ -409,56 +473,70 @@
   </section>
 
 
-  <!-- SERVICES -->
+  <!-- =========================
+       DANCE STYLES
+  ========================= -->
 
   <section>
 
     <div class="container">
 
       <div class="section-label">
-        What I Do
+        Movement
       </div>
 
       <h2>
-        Let's create something.
+        My dance world.
       </h2>
 
-      <div class="services-grid">
+      <div class="styles-grid">
 
-        <div class="card">
-          <div class="card-number">01</div>
-          <h3>Dance Classes</h3>
-          <p>
-            Beginner to intermediate classes focused on
-            choreography, musicality and confidence.
-          </p>
+        <div class="style">
+          <div class="style-number">01</div>
+          <h3>Kathak</h3>
+          <p>Classical foundation, rhythm and storytelling.</p>
         </div>
 
-        <div class="card">
-          <div class="card-number">02</div>
-          <h3>Private Training</h3>
-          <p>
-            One-on-one sessions tailored to your goals,
-            upcoming performances or personal growth.
-          </p>
+        <div class="style">
+          <div class="style-number">02</div>
+          <h3>Contemporary</h3>
+          <p>Expression, flow and freedom of movement.</p>
         </div>
 
-        <div class="card">
-          <div class="card-number">03</div>
-          <h3>Workshops</h3>
-          <p>
-            High-energy choreography workshops for studios,
-            colleges, communities and dance events.
-          </p>
+        <div class="style">
+          <div class="style-number">03</div>
+          <h3>Semi-Classical</h3>
+          <p>Traditional movement with a contemporary touch.</p>
         </div>
 
-        <div class="card">
-          <div class="card-number">04</div>
-          <h3>Event Choreography</h3>
-          <p>
-            Choreography and performance preparation for
-            weddings, corporate events and stage shows.
-          </p>
+        <div class="style">
+          <div class="style-number">04</div>
+          <h3>Bollywood</h3>
+          <p>Energy, performance and entertainment.</p>
+        </div>
+
+        <div class="style">
+          <div class="style-number">05</div>
+          <h3>Freestyle</h3>
+          <p>Musicality, individuality and spontaneous movement.</p>
+        </div>
+
+        <div class="style">
+          <div class="style-number">06</div>
+          <h3>Hip-Hop</h3>
+          <p>Groove, musicality and urban movement.</p>
+        </div>
+
+        <div class="style">
+          <div class="style-number">07</div>
+          <h3>Zumba</h3>
+          <p>Dance fitness with high energy.</p>
+        </div>
+
+        <div class="style">
+          <div class="style-number">08</div>
+          <h3>Yoga</h3>
+          <p>Mobility, balance, strength and mindful movement.</p>
         </div>
 
       </div>
@@ -468,55 +546,67 @@
   </section>
 
 
-  <!-- EVENTS -->
+  <!-- =========================
+       SERVICES
+  ========================= -->
 
-  <section class="events">
+  <section class="services">
 
     <div class="container">
 
       <div class="section-label">
-        Events
+        Work With Me
       </div>
 
       <h2>
-        Where I'll be.
+        What I can create with you.
       </h2>
 
-      <div class="event">
+      <div class="services-grid">
 
-        <div class="event-date">
-          OCT 18
+        <div class="service">
+
+          <h3>Dance Classes</h3>
+
+          <p>
+            Learn choreography, improve your movement,
+            build confidence and discover your own style.
+            Suitable for different experience levels.
+          </p>
+
         </div>
 
-        <div>
-          <h3>Commercial Choreo Workshop</h3>
-          <p>Bengaluru · 6:00 PM</p>
+        <div class="service">
+
+          <h3>Private Sessions</h3>
+
+          <p>
+            One-on-one dance training tailored to your
+            goals, choreography requirements or performance.
+          </p>
+
         </div>
 
-      </div>
+        <div class="service">
 
-      <div class="event">
+          <h3>Workshops</h3>
 
-        <div class="event-date">
-          NOV 02
+          <p>
+            Dance workshops for studios, colleges,
+            communities, teams and special events.
+          </p>
+
         </div>
 
-        <div>
-          <h3>Open Style Dance Session</h3>
-          <p>Bengaluru · 5:00 PM</p>
-        </div>
+        <div class="service">
 
-      </div>
+          <h3>Event Choreography</h3>
 
-      <div class="event">
+          <p>
+            Choreography and preparation for performances,
+            celebrations, events and stage shows.
+          </p>
 
-        <div class="event-date">
-          NOV 16
-        </div>
-
-        <div>
-          <h3>Dance & Performance Workshop</h3>
-          <p>Bengaluru · 4:00 PM</p>
         </div>
 
       </div>
@@ -526,39 +616,67 @@
   </section>
 
 
-  <!-- CTA -->
+  <!-- =========================
+       PHILOSOPHY
+  ========================= -->
+
+  <section class="why">
+
+    <div class="container">
+
+      <div class="section-label">
+        The Emotive Feet Way
+      </div>
+
+      <h2>
+        Don't just learn the steps.
+      </h2>
+
+      <p class="why-text">
+        Understand the music. Find the feeling.
+        Build confidence. Make the movement your own.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CONTACT CTA
+  ========================= -->
 
   <section class="cta">
 
     <div class="container">
 
       <div class="section-label">
-        Let's Work Together
+        Let's Dance
       </div>
 
       <h2>
-        Have an event, class or idea?
+        Have a class, event or choreography idea?
       </h2>
 
       <p>
-        Send me a message and let's talk about your
-        choreography, workshop or event.
+        Whether you want to learn, collaborate, organise a
+        workshop or choreograph a performance, let's talk.
       </p>
 
       <div class="buttons">
 
         <a
           class="button primary"
-          href="https://wa.me/919876543210?text=Hi%20Aarav!%20I'd%20like%20to%20work%20with%20you."
+          href="https://wa.me/918987596997?text=Hi%20Aishwarya!%20I'd%20like%20to%20work%20with%20you."
           target="_blank">
-          Start a WhatsApp Chat
+          💬 Start a WhatsApp Chat
         </a>
 
         <a
           class="button secondary"
-          href="https://instagram.com/aaravdanceco"
+          href="https://instagram.com/emotive_feet"
           target="_blank">
-          Follow on Instagram
+          📸 @emotive_feet
         </a>
 
       </div>
@@ -568,25 +686,32 @@
   </section>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================= -->
 
   <footer>
 
     <div class="social">
 
-      <a href="https://instagram.com/aaravdanceco" target="_blank">
+      <a
+        href="https://instagram.com/emotive_feet"
+        target="_blank">
         Instagram
       </a>
 
-      <a href="https://wa.me/919876543210" target="_blank">
+      <a
+        href="https://wa.me/918987596997"
+        target="_blank">
         WhatsApp
       </a>
 
     </div>
 
-    © 2026 Aarav Dance Co. · All rights reserved.
+    © 2026 Emotive Feet · Aishwarya Vardhan · Bangalore
 
   </footer>
+
 
 </body>
 </html>
