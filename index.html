@@ -6,6 +6,12 @@
 
   <title>Emotive Feet | Aishwarya Vardhan</title>
   <meta name="description" content="Aishwarya Vardhan — dancer, choreographer and dance teacher in Bangalore. Kathak, contemporary, Bollywood, semi-classical, freestyle, hip-hop, Zumba and yoga.">
+  <meta name="theme-color" content="#18342e">
+  <meta property="og:title" content="Emotive Feet | Aishwarya Vardhan">
+  <meta property="og:description" content="Dance classes, choreography and workshops in Bangalore with Aishwarya Vardhan.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -364,6 +370,199 @@
     }
 
   </style>
+  <style>
+    :root {
+      --ink: #211f1b;
+      --paper: #fbfaf7;
+      --muted: #65645e;
+      --forest: #18342e;
+      --tomato: #d34b35;
+      --gold: #e8b84f;
+      --line: #dfddd5;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", sans-serif;
+    }
+
+    * { letter-spacing: 0; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.65;
+    }
+
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      background: var(--forest);
+      color: var(--paper);
+    }
+
+    .site-nav {
+      width: min(1200px, calc(100% - 64px));
+      height: 84px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,.2);
+    }
+
+    .nav-brand {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .nav-links { display: flex; gap: 30px; color: rgba(255,255,255,.82); font-size: 14px; }
+    .nav-links a:hover, .social a:hover { color: var(--gold); }
+
+    .hero-content {
+      width: min(1200px, calc(100% - 64px));
+      max-width: none;
+      flex: 1;
+      margin: 0 auto;
+      padding: 42px 0 54px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .brand, .section-label {
+      color: var(--gold);
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 { font-family: var(--serif); font-weight: 600; }
+
+    h1 {
+      max-width: 720px;
+      margin-top: 26px;
+      font-size: clamp(58px, 6.7vw, 92px);
+      line-height: .99;
+      letter-spacing: 0;
+    }
+
+    .hero-name { margin-top: 25px; color: var(--gold); font-size: 16px; }
+    .hero-subtitle { max-width: 470px; margin-top: 12px; color: rgba(255,255,255,.77); font-size: 17px; }
+    .hero-artwork { display: block; width: auto; height: min(76vh, 740px); max-width: 100%; object-fit: contain; }
+
+    .buttons { gap: 12px; margin-top: 29px; }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 13px 21px;
+      border: 1px solid transparent;
+      border-radius: 2px;
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 700;
+      transition: background-color .2s ease, color .2s ease, transform .2s ease;
+    }
+
+    .button:hover { transform: translateY(-2px); }
+    .primary { background: var(--tomato); color: white; }
+    .primary:hover { background: #b83a2a; }
+    .secondary { border-color: rgba(255,255,255,.55); background: transparent; color: white; }
+    .secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+    section { padding: 100px 32px; }
+    .container { max-width: 1120px; }
+    h2 { margin-bottom: 28px; font-size: clamp(38px, 5vw, 62px); line-height: 1.08; }
+    .intro { background: var(--paper); }
+    .intro-grid { grid-template-columns: 1fr .82fr; gap: 72px; }
+    .intro .section-label, .work-section .section-label, .why .section-label { color: var(--tomato); }
+    .intro-text { color: var(--muted); font-size: 17px; }
+    .intro-image { display: block; width: 100%; height: auto; aspect-ratio: 2 / 3; border-radius: 0; object-fit: cover; object-position: center 52%; background: #e7e2d9; }
+
+    .work-section { padding-top: 40px; background: var(--paper); }
+    .work-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 30px; }
+    .work-heading h2 { margin-bottom: 0; }
+    .work-note { max-width: 320px; color: var(--muted); font-size: 14px; }
+    .work-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+    .work-item { min-width: 0; }
+    .work-item img { display: block; width: 100%; aspect-ratio: .60; object-fit: cover; object-position: center; background: #e7e2d9; }
+    .work-item figcaption { padding-top: 12px; }
+    .work-title { display: block; font-family: var(--serif); font-size: 19px; font-weight: 600; line-height: 1.3; }
+    .work-type { color: var(--muted); font-size: 12px; }
+
+    .styles-grid { gap: 0 24px; }
+    .style { padding: 21px 4px; border: 0; border-top: 1px solid var(--line); border-radius: 0; background: transparent; }
+    .style:hover { border-color: var(--tomato); transform: none; }
+    .style-number { color: var(--tomato); }
+    .style h3 { margin-top: 5px; font-size: 23px; }
+    .style p { color: var(--muted); }
+
+    .services { background: var(--forest); color: var(--paper); }
+    .services .section-label { color: var(--gold); }
+    .services-grid { gap: 0 42px; }
+    .service { padding: 26px 0; border: 0; border-top: 1px solid rgba(255,255,255,.25); border-radius: 0; }
+    .service h3 { margin-bottom: 7px; font-size: 27px; }
+    .service p { max-width: 460px; color: rgba(255,255,255,.72); }
+    .why { background: #f0ede5; }
+    .why h2 { margin-bottom: 20px; }
+    .why-text { max-width: 760px; color: #55534d; font-family: var(--serif); font-size: clamp(22px, 3vw, 34px); line-height: 1.4; }
+    .cta { background: var(--tomato); color: white; }
+    .cta .section-label { color: #ffe2a0; }
+    .cta h2 { max-width: 800px; margin: auto; }
+    .cta p { color: rgba(255,255,255,.82); }
+    .cta .secondary { border-color: rgba(255,255,255,.75); }
+    footer { padding: 30px 24px; border-top: 0; background: #132923; color: rgba(255,255,255,.68); font-size: 13px; }
+    footer .social a { color: white; }
+
+    @media (max-width: 800px) {
+      .site-nav, .hero-content { width: min(100% - 40px, 620px); }
+      .hero-content { grid-template-columns: minmax(0, 1fr) minmax(190px, .7fr); gap: 20px; }
+      h1 { font-size: clamp(54px, 9vw, 76px); }
+      .hero-artwork { height: min(64vh, 580px); }
+      .intro-grid { gap: 35px; }
+      .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 14px; }
+    }
+
+    @media (max-width: 560px) {
+      .site-nav { width: calc(100% - 40px); height: 60px; }
+      .nav-brand { font-size: 12px; }
+      .nav-links { gap: 10px; font-size: 11px; }
+      .nav-links a:last-child { display: none; }
+      .hero { min-height: auto; }
+      .hero-content { width: calc(100% - 40px); padding: 38px 0 32px; grid-template-columns: 1fr; gap: 22px; }
+      .hero-copy { max-width: 430px; }
+      h1 { margin-top: 18px; font-size: clamp(42px, 13vw, 58px); }
+      .hero-name { margin-top: 18px; font-size: 13px; }
+      .hero-subtitle { font-size: 14px; }
+      .hero .buttons { margin-top: 20px; }
+      .hero-artwork { height: min(56vh, 460px); justify-self: center; }
+      section { padding: 72px 20px; }
+      .intro-grid { grid-template-columns: 1fr; gap: 30px; }
+      .intro-image { width: min(100%, 390px); max-height: 540px; }
+      .work-section { padding-top: 20px; }
+      .work-heading { display: block; }
+      .work-note { margin-top: 12px; }
+      .work-grid { gap: 24px 12px; }
+      .work-item img { aspect-ratio: .60; }
+      .work-title { font-size: 17px; }
+      .styles-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .services-grid { grid-template-columns: 1fr; }
+      .button { width: auto; }
+      .cta .button { width: 100%; }
+    }
+
+    @media (max-width: 360px) {
+      .styles-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 
 
@@ -374,27 +573,36 @@
        HERO
   ========================= -->
 
-  <header class="hero">
+  <header class="hero" id="top">
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <a class="nav-brand" href="#top">Emotive Feet</a>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#classes">Classes</a>
+        <a href="#about">About</a>
+      </div>
+    </nav>
 
     <div class="hero-content">
+
+      <div class="hero-copy">
 
       <div class="brand">
         Emotive Feet
       </div>
 
       <h1>
-        MOVE.<br>
-        FEEL.<br>
-        EXPRESS.
+        Move with<br>
+        feeling.
       </h1>
 
       <div class="hero-name">
-        Aishwarya Vardhan · Dancer · Choreographer · Teacher
+        Aishwarya Vardhan · Dancer & Choreographer
       </div>
 
       <p class="hero-subtitle">
-        Dance classes, choreography, workshops and movement experiences
-        in Bangalore.
+        Classes, choreography and workshops in Bangalore, led by feeling and built around you.
       </p>
 
       <div class="buttons">
@@ -403,17 +611,21 @@
           class="button primary"
           href="https://wa.me/918987596997?text=Hi%20Aishwarya!%20I%20found%20you%20through%20Instagram%20and%20I'd%20like%20to%20know%20more%20about%20your%20dance%20classes."
           target="_blank">
-          💬 WhatsApp Me
+          Book a class <span aria-hidden="true">&nbsp;→</span>
         </a>
 
         <a
           class="button secondary"
           href="https://instagram.com/emotive_feet"
           target="_blank">
-          Instagram →
+          Follow the journey <span aria-hidden="true">&nbsp;↗</span>
         </a>
 
       </div>
+
+      </div>
+
+      <img class="hero-artwork" src="4663C74A-20EC-4FBA-BE62-00661A4416FE.webp" alt="Aishwarya performing in a black and red costume for Rangilo Maro Dholna">
 
     </div>
 
@@ -424,7 +636,7 @@
        ABOUT
   ========================= -->
 
-  <section class="intro">
+  <section class="intro" id="about">
 
     <div class="container">
 
@@ -464,7 +676,7 @@
 
         </div>
 
-        <div class="intro-image"></div>
+        <img class="intro-image" src="IMG_1098.webp" alt="Aishwarya performing a contemporary dance movement in a black costume with a red sash" loading="lazy">
 
       </div>
 
@@ -472,12 +684,42 @@
 
   </section>
 
+  <section class="work-section" id="work">
+    <div class="container">
+      <div class="work-heading">
+        <div>
+          <div class="section-label">On stage & in the studio</div>
+          <h2>Selected work.</h2>
+        </div>
+        <p class="work-note">A few moments from performances, practice and the joy of dancing together.</p>
+      </div>
+      <div class="work-grid">
+        <figure class="work-item">
+          <img src="4A55F852-3C1C-4FF6-B885-A3007AE73B54.webp" alt="Aishwarya in a black performance costume for Ayy Amma" loading="lazy">
+          <figcaption><span class="work-title">Ayy Amma</span><span class="work-type">Stage performance</span></figcaption>
+        </figure>
+        <figure class="work-item">
+          <img src="IMG_1138.webp" alt="Aishwarya dancing in a flowing black costume with a red sash" loading="lazy">
+          <figcaption><span class="work-title">Finding the flow</span><span class="work-type">Solo movement</span></figcaption>
+        </figure>
+        <figure class="work-item">
+          <img src="IMG_1146.webp" alt="Aishwarya dancing with a group in a bright studio" loading="lazy">
+          <figcaption><span class="work-title">In good company</span><span class="work-type">Studio session</span></figcaption>
+        </figure>
+        <figure class="work-item">
+          <img src="IMG_1149.webp" alt="Aishwarya leading a group dance in colorful Indian attire" loading="lazy">
+          <figcaption><span class="work-title">Moving together</span><span class="work-type">Class & choreography</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
 
   <!-- =========================
        DANCE STYLES
   ========================= -->
 
-  <section>
+  <section id="classes">
 
     <div class="container">
 
@@ -669,14 +911,14 @@
           class="button primary"
           href="https://wa.me/918987596997?text=Hi%20Aishwarya!%20I'd%20like%20to%20work%20with%20you."
           target="_blank">
-          💬 Start a WhatsApp Chat
+          Enquire on WhatsApp <span aria-hidden="true">&nbsp;→</span>
         </a>
 
         <a
           class="button secondary"
           href="https://instagram.com/emotive_feet"
           target="_blank">
-          📸 @emotive_feet
+          Instagram <span aria-hidden="true">&nbsp;↗</span>
         </a>
 
       </div>
