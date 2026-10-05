@@ -511,6 +511,36 @@
     .service { padding: 26px 0; border: 0; border-top: 1px solid rgba(255,255,255,.25); border-radius: 0; }
     .service h3 { margin-bottom: 7px; font-size: 27px; }
     .service p { max-width: 460px; color: rgba(255,255,255,.72); }
+    .video-section { background: var(--forest); color: var(--paper); }
+    .video-section .section-label { color: var(--gold); }
+    .video-layout { display: grid; grid-template-columns: .7fr 1.3fr; gap: 56px; align-items: center; }
+    .video-layout h2 { margin-bottom: 18px; }
+    .video-copy { max-width: 360px; color: rgba(255,255,255,.74); }
+    .video-media { min-width: 0; }
+    .video-showcase { position: relative; }
+    .video-viewport { width: 100%; overflow: hidden; }
+    .video-track { display: flex; transition: transform .45s cubic-bezier(.2, .7, .2, 1); }
+    .video-slide { flex: 0 0 100%; min-width: 0; }
+    .video-frame { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; background: #080b0a; box-shadow: 0 20px 48px rgba(0,0,0,.2); }
+    .video-frame iframe { display: block; width: 100%; height: 100%; border: 0; }
+    .video-frame iframe[hidden] { display: none; }
+    .video-poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .video-play-button { position: absolute; inset: 50% auto auto 50%; display: grid; width: 72px; aspect-ratio: 1; place-items: center; transform: translate(-50%, -50%); border: 0; border-radius: 50%; background: var(--tomato); box-shadow: 0 6px 24px rgba(0,0,0,.3); cursor: pointer; transition: transform .2s ease, background-color .2s ease; }
+    .video-play-button:hover { transform: translate(-50%, -50%) scale(1.08); background: #b83a2a; }
+    .video-play-icon { width: 0; height: 0; margin-left: 5px; border-top: 12px solid transparent; border-bottom: 12px solid transparent; border-left: 17px solid white; }
+    .video-arrow { position: absolute; z-index: 2; top: 50%; display: grid; width: 44px; aspect-ratio: 1; place-items: center; transform: translateY(-50%); border: 1px solid rgba(255,255,255,.75); border-radius: 50%; background: rgba(19,41,35,.82); color: white; font-size: 25px; line-height: 1; cursor: pointer; transition: background-color .2s ease, color .2s ease, opacity .2s ease; }
+    .video-arrow:hover:not(:disabled) { background: var(--gold); color: var(--ink); }
+    .video-arrow:disabled { opacity: .4; cursor: default; }
+    .video-arrow-previous { left: 12px; }
+    .video-arrow-next { right: 12px; }
+    .video-tabs { display: flex; gap: 10px; margin-top: 14px; overflow-x: auto; overscroll-behavior-inline: contain; scroll-snap-type: x mandatory; scrollbar-color: rgba(232,184,79,.7) rgba(255,255,255,.12); scrollbar-width: thin; }
+    .video-tab { flex: 0 0 150px; min-width: 0; padding: 6px; border: 1px solid rgba(255,255,255,.24); background: transparent; color: var(--paper); text-align: left; cursor: pointer; scroll-snap-align: start; }
+    .video-tab[aria-selected="true"] { border-color: var(--gold); background: rgba(255,255,255,.08); }
+    .video-tab img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+    .video-tab span { display: block; padding: 7px 3px 2px; font-size: 12px; font-weight: 600; }
+    .video-status { margin-top: 8px; color: rgba(255,255,255,.68); font-size: 12px; }
+    .video-fallback { display: inline-block; margin-top: 10px; color: var(--gold); font-size: 13px; }
+    .video-fallback:hover { text-decoration: underline; }
     .why { background: #f0ede5; }
     .why h2 { margin-bottom: 20px; }
     .why-text { max-width: 760px; color: #55534d; font-family: var(--serif); font-size: clamp(22px, 3vw, 34px); line-height: 1.4; }
@@ -519,6 +549,13 @@
     .cta h2 { max-width: 800px; margin: auto; }
     .cta p { color: rgba(255,255,255,.82); }
     .cta .secondary { border-color: rgba(255,255,255,.75); }
+    .booking-picker { max-width: 680px; margin: 32px auto 0; text-align: left; }
+    .booking-picker label { display: block; margin-bottom: 8px; color: rgba(255,255,255,.88); font-size: 14px; font-weight: 600; }
+    .booking-controls { display: flex; align-items: stretch; gap: 12px; }
+    .booking-picker select { flex: 1; min-width: 0; min-height: 52px; padding: 0 14px; border: 1px solid rgba(255,255,255,.55); border-radius: 2px; background: var(--paper); color: var(--ink); font: 500 15px var(--sans); }
+    .booking-submit { flex: 0 0 auto; background: var(--forest); color: white; cursor: pointer; }
+    .booking-status { min-height: 22px; margin-top: 8px; color: rgba(255,255,255,.78); font-size: 12px; }
+    .mobile-booking { display: none; }
     footer { padding: 30px 24px; border-top: 0; background: #132923; color: rgba(255,255,255,.68); font-size: 13px; }
     footer .social a { color: white; }
 
@@ -529,6 +566,8 @@
       .hero-artwork { height: min(64vh, 580px); }
       .intro-grid { gap: 35px; }
       .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 14px; }
+      .video-layout { grid-template-columns: 1fr; gap: 28px; }
+      .video-copy { max-width: 560px; }
     }
 
     @media (max-width: 560px) {
@@ -557,10 +596,55 @@
       .services-grid { grid-template-columns: 1fr; }
       .button { width: auto; }
       .cta .button { width: 100%; }
+      body { padding-bottom: calc(82px + env(safe-area-inset-bottom)); }
+      .booking-controls { flex-direction: column; }
+      .booking-submit { width: 100%; }
+      .mobile-booking { position: fixed; z-index: 20; right: auto; bottom: calc(12px + env(safe-area-inset-bottom)); left: 50%; display: flex; width: min(60vw, 300px); min-height: 46px; align-items: center; justify-content: center; gap: 6px; padding: 10px 12px; transform: translateX(-50%); border: 1px solid rgba(255,255,255,.14); border-radius: 999px; background: var(--forest); box-shadow: 0 5px 18px rgba(19,41,35,.24); color: white; font-size: 12px; font-weight: 700; white-space: nowrap; transition: opacity .2s ease, transform .2s ease, visibility .2s ease, box-shadow .2s ease; }
+      .mobile-booking.is-hidden { transform: translate(-50%, 12px); visibility: hidden; opacity: 0; pointer-events: none; }
+    }
+
+    @media (max-width: 560px) and (hover: hover) {
+      .mobile-booking:hover { transform: translate(-50%, -2px); box-shadow: 0 8px 22px rgba(19,41,35,.3); }
     }
 
     @media (max-width: 360px) {
       .styles-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+      .work-item {
+        position: relative;
+        transition: transform 280ms ease;
+      }
+
+      .work-item img {
+        transition: transform 380ms cubic-bezier(.2, .7, .2, 1), box-shadow 380ms ease;
+        will-change: transform;
+      }
+
+      .work-item:hover {
+        z-index: 1;
+        transform: translateY(-6px);
+      }
+
+      .work-item:hover img {
+        transform: scale(1.035);
+        box-shadow: 0 18px 34px rgba(24, 52, 46, .2);
+      }
+
+      .intro-image {
+        transition: transform 500ms cubic-bezier(.2, .7, .2, 1), box-shadow 500ms ease;
+      }
+
+      .intro-image:hover {
+        transform: scale(1.018);
+        box-shadow: 0 20px 38px rgba(24, 52, 46, .16);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .video-track { transition: none; }
     }
   </style>
 </head>
@@ -609,9 +693,8 @@
 
         <a
           class="button primary"
-          href="https://wa.me/918987596997?text=Hi%20Aishwarya!%20I%20found%20you%20through%20Instagram%20and%20I'd%20like%20to%20know%20more%20about%20your%20dance%20classes."
-          target="_blank">
-          Book a class <span aria-hidden="true">&nbsp;→</span>
+          href="#contact">
+          Choose what to book <span aria-hidden="true">&nbsp;→</span>
         </a>
 
         <a
@@ -710,6 +793,71 @@
           <img src="IMG_1149.webp" alt="Aishwarya leading a group dance in colorful Indian attire" loading="lazy">
           <figcaption><span class="work-title">Moving together</span><span class="work-type">Class & choreography</span></figcaption>
         </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="video-section" aria-labelledby="video-heading">
+    <div class="container video-layout">
+      <div>
+        <div class="section-label">Watch me dance</div>
+        <h2 id="video-heading">A little more movement.</h2>
+        <p class="video-copy">See the rhythm, expression and energy behind Emotive Feet.</p>
+      </div>
+      <div class="video-media">
+        <div class="video-showcase" role="region" aria-roledescription="carousel" aria-label="Dance video showcase">
+          <button class="video-arrow video-arrow-previous" type="button" aria-label="Previous video" disabled>&lsaquo;</button>
+          <div class="video-viewport">
+            <div class="video-track">
+              <article class="video-slide" id="video-panel-1" role="tabpanel" aria-labelledby="video-tab-1" aria-hidden="false">
+                <div class="video-frame">
+                  <img class="video-poster" src="https://img.youtube.com/vi/fWIA1p_Nk4o/hqdefault.jpg" alt="Preview of dance performance 01" loading="lazy">
+                  <button class="video-play-button" type="button" aria-label="Play performance 01">
+                    <span class="video-play-icon" aria-hidden="true"></span>
+                  </button>
+                  <iframe
+                    data-video-id="fWIA1p_Nk4o"
+                    data-src="https://www.youtube-nocookie.com/embed/fWIA1p_Nk4o?playsinline=1&amp;rel=0&amp;autoplay=1"
+                    title="Dance performance 01"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                    hidden></iframe>
+                </div>
+                <a class="video-fallback" href="https://youtu.be/fWIA1p_Nk4o" target="_blank" rel="noopener noreferrer">Watch this performance on YouTube <span aria-hidden="true">↗</span></a>
+              </article>
+              <article class="video-slide" id="video-panel-2" role="tabpanel" aria-labelledby="video-tab-2" aria-hidden="true" inert>
+                <div class="video-frame">
+                  <img class="video-poster" src="https://img.youtube.com/vi/UJw_fsO7Ye0/hqdefault.jpg" alt="Preview of dance performance 02" loading="lazy">
+                  <button class="video-play-button" type="button" aria-label="Play performance 02">
+                    <span class="video-play-icon" aria-hidden="true"></span>
+                  </button>
+                  <iframe
+                    data-video-id="UJw_fsO7Ye0"
+                    data-src="https://www.youtube-nocookie.com/embed/UJw_fsO7Ye0?playsinline=1&amp;rel=0&amp;autoplay=1"
+                    title="Dance performance 02"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                    hidden></iframe>
+                </div>
+                <a class="video-fallback" href="https://youtu.be/UJw_fsO7Ye0" target="_blank" rel="noopener noreferrer">Watch this performance on YouTube <span aria-hidden="true">↗</span></a>
+              </article>
+            </div>
+          </div>
+          <button class="video-arrow video-arrow-next" type="button" aria-label="Next video">&rsaquo;</button>
+        </div>
+        <div class="video-tabs" role="tablist" aria-label="Choose a dance video">
+          <button class="video-tab" id="video-tab-1" type="button" role="tab" aria-controls="video-panel-1" aria-selected="true" tabindex="0">
+            <img src="https://img.youtube.com/vi/fWIA1p_Nk4o/mqdefault.jpg" alt="" loading="lazy">
+            <span>Performance 01</span>
+          </button>
+          <button class="video-tab" id="video-tab-2" type="button" role="tab" aria-controls="video-panel-2" aria-selected="false" tabindex="-1">
+            <img src="https://img.youtube.com/vi/UJw_fsO7Ye0/mqdefault.jpg" alt="" loading="lazy">
+            <span>Performance 02</span>
+          </button>
+        </div>
+        <p class="video-status" aria-live="polite">Video 1 of 2</p>
       </div>
     </div>
   </section>
@@ -888,7 +1036,7 @@
        CONTACT CTA
   ========================= -->
 
-  <section class="cta">
+  <section class="cta" id="contact">
 
     <div class="container">
 
@@ -905,15 +1053,28 @@
         workshop or choreograph a performance, let's talk.
       </p>
 
+      <div class="booking-picker">
+        <label for="booking-service">What are you interested in?</label>
+        <div class="booking-controls">
+          <select id="booking-service" aria-describedby="booking-status">
+            <option value="dance classes">Dance classes</option>
+            <option value="private sessions">Private sessions</option>
+            <option value="a workshop">A workshop</option>
+            <option value="event choreography">Event choreography</option>
+          </select>
+          <a
+            class="button booking-submit"
+            id="booking-link"
+            href="https://wa.me/918987596997?text=Hi%20Aishwarya%21%20I%27m%20interested%20in%20dance%20classes%20in%20Bangalore.%20Could%20you%20share%20availability%20and%20details%3F"
+            target="_blank"
+            rel="noopener noreferrer">
+            Continue on WhatsApp <span aria-hidden="true">&nbsp;→</span>
+          </a>
+        </div>
+        <p class="booking-status" id="booking-status" role="status" aria-live="polite">WhatsApp will open with a message about dance classes.</p>
+      </div>
+
       <div class="buttons">
-
-        <a
-          class="button primary"
-          href="https://wa.me/918987596997?text=Hi%20Aishwarya!%20I'd%20like%20to%20work%20with%20you."
-          target="_blank">
-          Enquire on WhatsApp <span aria-hidden="true">&nbsp;→</span>
-        </a>
-
         <a
           class="button secondary"
           href="https://instagram.com/emotive_feet"
@@ -953,6 +1114,108 @@
     © 2026 Emotive Feet · Aishwarya Vardhan · Bangalore
 
   </footer>
+
+  <a class="mobile-booking" href="#contact" aria-label="Choose a service and book on WhatsApp">
+    Book on WhatsApp <span aria-hidden="true">→</span>
+  </a>
+
+  <script>
+    const bookingService = document.querySelector('#booking-service');
+    const bookingLink = document.querySelector('#booking-link');
+    const bookingStatus = document.querySelector('#booking-status');
+    const mobileBooking = document.querySelector('.mobile-booking');
+    const contactSection = document.querySelector('#contact');
+    const videoTrack = document.querySelector('.video-track');
+    const videoSlides = [...document.querySelectorAll('.video-slide')];
+    const videoTabs = [...document.querySelectorAll('.video-tab')];
+    const previousVideo = document.querySelector('.video-arrow-previous');
+    const nextVideo = document.querySelector('.video-arrow-next');
+    const videoStatus = document.querySelector('.video-status');
+    let activeVideoIndex = 0;
+
+    function updateBookingMessage() {
+      const service = bookingService.value;
+      const message = `Hi Aishwarya! I'm interested in ${service} in Bangalore. Could you share availability and details?`;
+      bookingLink.href = `https://wa.me/918987596997?text=${encodeURIComponent(message)}`;
+      bookingStatus.textContent = `WhatsApp will open with a message about ${service}.`;
+    }
+
+    bookingService.addEventListener('change', updateBookingMessage);
+
+    function activateVideo(index) {
+      if (index < 0 || index >= videoSlides.length || index === activeVideoIndex) return;
+
+      videoSlides.forEach((slide, slideIndex) => {
+        const isActive = slideIndex === index;
+        slide.setAttribute('aria-hidden', String(!isActive));
+        slide.inert = !isActive;
+
+        if (!isActive) {
+          const frame = slide.querySelector('iframe');
+          frame.removeAttribute('src');
+          frame.hidden = true;
+          slide.querySelector('.video-poster').hidden = false;
+          slide.querySelector('.video-play-button').hidden = false;
+        }
+      });
+
+      activeVideoIndex = index;
+      videoTrack.style.transform = `translateX(-${index * 100}%)`;
+      videoTabs.forEach((tab, tabIndex) => {
+        const isSelected = tabIndex === index;
+        tab.setAttribute('aria-selected', String(isSelected));
+        tab.tabIndex = isSelected ? 0 : -1;
+      });
+      previousVideo.disabled = index === 0;
+      nextVideo.disabled = index === videoSlides.length - 1;
+      videoStatus.textContent = `Video ${index + 1} of ${videoSlides.length}`;
+      videoTabs[index].scrollIntoView({
+        behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+        block: 'nearest',
+        inline: 'nearest'
+      });
+    }
+
+    videoSlides.forEach(slide => {
+      slide.querySelector('.video-play-button').addEventListener('click', () => {
+        const frame = slide.querySelector('iframe');
+        frame.src = frame.dataset.src;
+        frame.hidden = false;
+        slide.querySelector('.video-poster').hidden = true;
+        slide.querySelector('.video-play-button').hidden = true;
+      });
+    });
+
+    previousVideo.addEventListener('click', () => activateVideo(activeVideoIndex - 1));
+    nextVideo.addEventListener('click', () => activateVideo(activeVideoIndex + 1));
+
+    videoTabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => activateVideo(index));
+      tab.addEventListener('keydown', event => {
+        let nextIndex = null;
+        if (event.key === 'ArrowRight') nextIndex = Math.min(index + 1, videoTabs.length - 1);
+        if (event.key === 'ArrowLeft') nextIndex = Math.max(index - 1, 0);
+        if (event.key === 'Home') nextIndex = 0;
+        if (event.key === 'End') nextIndex = videoTabs.length - 1;
+        if (nextIndex !== null) {
+          event.preventDefault();
+          activateVideo(nextIndex);
+          videoTabs[nextIndex].focus();
+        }
+      });
+    });
+
+    if ('IntersectionObserver' in window) {
+      const contactObserver = new IntersectionObserver(([entry]) => {
+        const isHidden = entry.isIntersecting;
+        mobileBooking.classList.toggle('is-hidden', isHidden);
+        mobileBooking.setAttribute('aria-hidden', String(isHidden));
+        mobileBooking.tabIndex = isHidden ? -1 : 0;
+      }, { threshold: 0.12 });
+
+      contactObserver.observe(contactSection);
+    }
+  </script>
 
 
 </body>
