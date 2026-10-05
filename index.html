@@ -454,7 +454,9 @@
 
     .hero-name { margin-top: 25px; color: var(--gold); font-size: 16px; }
     .hero-subtitle { max-width: 470px; margin-top: 12px; color: rgba(255,255,255,.77); font-size: 17px; }
-    .hero-artwork { display: block; width: auto; height: min(76vh, 740px); max-width: 100%; object-fit: contain; }
+    .hero-slideshow { position: relative; width: auto; height: min(76vh, 740px); max-width: 100%; aspect-ratio: 941 / 1672; }
+    .hero-artwork { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity 650ms ease; }
+    .hero-artwork.is-active { opacity: 1; }
 
     .buttons { gap: 12px; margin-top: 29px; }
 
@@ -563,7 +565,7 @@
       .site-nav, .hero-content { width: min(100% - 40px, 620px); }
       .hero-content { grid-template-columns: minmax(0, 1fr) minmax(190px, .7fr); gap: 20px; }
       h1 { font-size: clamp(54px, 9vw, 76px); }
-      .hero-artwork { height: min(64vh, 580px); }
+      .hero-slideshow { height: min(64vh, 580px); }
       .intro-grid { gap: 35px; }
       .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 14px; }
       .video-layout { grid-template-columns: 1fr; gap: 28px; }
@@ -582,7 +584,7 @@
       .hero-name { margin-top: 18px; font-size: 13px; }
       .hero-subtitle { font-size: 14px; }
       .hero .buttons { margin-top: 20px; }
-      .hero-artwork { height: min(56vh, 460px); justify-self: center; }
+      .hero-slideshow { height: min(56vh, 460px); justify-self: center; }
       section { padding: 72px 20px; }
       .intro-grid { grid-template-columns: 1fr; gap: 30px; }
       .intro-image { width: min(100%, 390px); max-height: 540px; }
@@ -645,6 +647,7 @@
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .video-track { transition: none; }
+      .hero-artwork { transition: none; }
     }
   </style>
 </head>
@@ -708,7 +711,10 @@
 
       </div>
 
-      <img class="hero-artwork" src="4663C74A-20EC-4FBA-BE62-00661A4416FE.webp" alt="Aishwarya performing in a black and red costume for Rangilo Maro Dholna">
+      <div class="hero-slideshow" aria-label="Aishwarya's dance performances">
+        <img class="hero-artwork is-active" src="4663C74A-20EC-4FBA-BE62-00661A4416FE.webp" alt="Aishwarya performing in a black and red costume for Rangilo Maro Dholna" fetchpriority="high">
+        <img class="hero-artwork" src="1A990C15-9951-402D-ABE5-B66853CD36D7.webp" alt="Aishwarya performing Manwa Laage in a black costume with a red sash" aria-hidden="true">
+      </div>
 
     </div>
 
@@ -1120,6 +1126,23 @@
   </a>
 
   <script>
+    const heroArtwork = [...document.querySelectorAll('.hero-artwork')];
+    const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+    let activeHeroArtwork = 0;
+
+    function rotateHeroArtwork() {
+      if (document.hidden || reducedMotion.matches) return;
+      heroArtwork[activeHeroArtwork].classList.remove('is-active');
+      heroArtwork[activeHeroArtwork].setAttribute('aria-hidden', 'true');
+      activeHeroArtwork = (activeHeroArtwork + 1) % heroArtwork.length;
+      heroArtwork[activeHeroArtwork].classList.add('is-active');
+      heroArtwork[activeHeroArtwork].removeAttribute('aria-hidden');
+    }
+
+    if (!reducedMotion.matches) {
+      window.setInterval(rotateHeroArtwork, 2500);
+    }
+
     const bookingService = document.querySelector('#booking-service');
     const bookingLink = document.querySelector('#booking-link');
     const bookingStatus = document.querySelector('#booking-status');
